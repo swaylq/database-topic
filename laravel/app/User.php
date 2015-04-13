@@ -41,6 +41,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
             "AND password='" . sha1($pwd) . "'"
         );
 
+//        dd($queryResult);
         if (empty($queryResult)) {
             throw new AuthException();
         }
