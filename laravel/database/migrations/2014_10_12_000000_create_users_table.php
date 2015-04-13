@@ -17,8 +17,11 @@ class CreateUsersTable extends Migration {
 			$table->increments('id');
 			$table->string('name');
 			$table->string('password');
-			$table->string('avatar');
+            $table->string('secrets')->default('');
+			$table->string('avatar')->default('');
 			$table->timestamps();
+
+            $table->unique('name');
 		});
 	}
 
@@ -29,7 +32,7 @@ class CreateUsersTable extends Migration {
 	 */
 	public function down()
 	{
-        \Illuminate\Support\Facades\Schema::dropIfExists('users');
+        Schema::dropIfExists('users');
 	}
 
 }

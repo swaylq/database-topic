@@ -17,9 +17,11 @@ class CreateBooksTable extends Migration {
             $table->string('isbn');
             $table->decimal('price', 8, 2);
             $table->string('name');
-            $table->string('author');
+            $table->string('author')->default('');
             $table->text('detail')->default('');
             $table->timestamps();
+
+            $table->unique('isbn');
         });
 	}
 

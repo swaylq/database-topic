@@ -15,6 +15,11 @@ Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
 
+Route::group(['prefix' => 'user'], function() {
+    Route::post('/login', ['uses' => 'UserController@login']);
+    Route::get('/logout', ['uses' => 'UserController@logout']);
+});
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',

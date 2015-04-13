@@ -18,6 +18,8 @@ class CreateRodersTable extends Migration {
             $table->integer('count');
             $table->decimal('price', 8, 2);
             $table->timestamps();
+
+            $table->index('user_id');
         });
 	}
 

@@ -22,6 +22,9 @@ class CreateRoderBooksTable extends Migration {
             $table->string('book_name');
             
             $table->timestamps();
+
+            $table->index('order_id');
+            $table->index('user_id');
         });
 	}
 

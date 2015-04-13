@@ -1,5 +1,6 @@
 <?php namespace App;
 
+use App\Exceptions\AuthException;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Auth\Passwords\CanResetPassword;
@@ -22,13 +23,29 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['name', 'email', 'password'];
+	protected $fillable = ['name', 'password'];
 
 	/**
 	 * The attributes excluded from the model's JSON form.
 	 *
 	 * @var array
 	 */
-	protected $hidden = ['password', 'remember_token'];
+	protected $hidden = ['password'];
+
+    public static function login($name, $pwd)
+    {
+        $queryResult = \DB::select(
+            'SELECT id, name, secrets ' .
+            'FROM users ' .
+            "WHERE name='{$name}' " .
+            "AND password='" . sha1($pwd) . "'"
+        );
+
+        if (empty($queryResult)) {
+            throw new AuthException();
+        }
+
+        return $queryResult;
+    }
 
 }
