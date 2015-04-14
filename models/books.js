@@ -1,16 +1,17 @@
-var mongoose = require('../db.js');
+module.exports = function (mongoose) {
+    var bookSchema = new mongoose.Schema({
+        name: String,
+        author: String,
+        cover: String,
+        intro: String,
+        price: Number,
+        stock: Number
+    });
 
-var bookSchema = mongoose.Schema({
-    'name': String,
-    'author': String,
-    'cover': String,
-    'intro': String,
-    'price': Number,
-    'stock': Number
-});
+    bookSchema.methods.speak = function () {
+        console.log(this);
+    };
 
-bookSchema.methods.speak = function () {
-  console.log(this);
-};
-
-module.export = bookSchema;
+    bookModel = mongoose.model('book', bookSchema);
+    return bookModel;
+}
