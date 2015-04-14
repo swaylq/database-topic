@@ -14,12 +14,16 @@ class CreateRodersTable extends Migration {
 	{
 		Schema::create('orders', function(Blueprint $table){
             $table->increments('id');
-            $table->integer('user_id');
-            $table->integer('count');
+            $table->string('consignee_name');
+            $table->string('consignee_address');
             $table->decimal('price', 8, 2);
+
+            $table->integer('user_id')->default(0);
+            $table->integer('count')->default(0);
             $table->timestamps();
 
             $table->index('user_id');
+            $table->index('consignee_name');
         });
 	}
 

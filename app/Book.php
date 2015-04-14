@@ -6,6 +6,6 @@ class Book extends Model {
 
     protected $table = 'books';
 
-    protected $fillable = ['name', 'isbn', 'price', 'author', 'detail'];
+    protected $fillable = ['name', 'isbn', 'price', 'author', 'detail', 'intro', 'cover'];
 
 }

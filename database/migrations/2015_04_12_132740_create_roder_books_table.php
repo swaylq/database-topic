@@ -16,10 +16,11 @@ class CreateRoderBooksTable extends Migration {
             $table->increments('id');
             $table->integer('order_id');
             $table->integer('book_id');
-            $table->decimal('price', 8, 2);
+            $table->integer('number')->default(1);
 
-            $table->integer('user_id');
-            $table->string('book_name');
+            $table->decimal('price', 8, 2)->default(0);
+            $table->integer('user_id')->default(0);
+            $table->string('book_name')->default('');
             
             $table->timestamps();
 
