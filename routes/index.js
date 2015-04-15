@@ -3,7 +3,6 @@ var router = express.Router();
 var mongoose = require('../db.js');
 var bookModel = require('../models/books.js')(mongoose);
 var orderModel = require('../models/orders.js')(mongoose);
-var orderBookModel = require('../models/order_books.js')(mongoose);
 
 router.get('/book/create/exmple', function (req, res, next) {
     var book = new bookModel({
@@ -35,22 +34,15 @@ router.post('/order/create', function (req, res, next){
     var totalPrice = 0;
     req.params.books.forEach(function (book){
         totalPrice += book.price * book.number;
-    })
+    });
     var order = new orderModel({
         consignee_name: req.params.consignee_name,
         consignee_address: req.params.consignee_address,
         price: totalPrice,
-        created_at: currentDate
+        created_at: currentDate,
+        books: req.params.books
     });
     order.save();
-    req.params.books.forEach(function (book){
-        var orderBook = new orderBookModel({
-            order_id: order._id,
-            book_id: book._id,
-            number: book.number
-        });
-        orderBook.save();
-    });
     res.send({'msg': '下单成功'});
 });
 

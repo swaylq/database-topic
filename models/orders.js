@@ -3,7 +3,8 @@ module.exports = function (mongoose) {
         consignee_name: String,
         consignee_address: String,
         price: Number,
-        created_at: Date
+        created_at: Date,
+        books: Object
     });
 
     orderSchema.methods.speak = function () {
