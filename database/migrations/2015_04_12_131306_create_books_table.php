@@ -22,7 +22,7 @@ class CreateBooksTable extends Migration {
             $table->integer('stock')->default(1);
 
             $table->string('isbn')->nullable();
-            $table->text('detail')->default('');
+            $table->text('detail')->nullable();
             $table->timestamps();
 
             $table->unique('isbn');
