@@ -41,7 +41,7 @@ class BooksTableSeeder extends Seeder{
         }
 
         foreach (range(2, 10000) as $index) {
-            echo "\r" . '进度： ' . $index / 100 . '%';
+            echo "\r" . '进度： ' . $index / 100 . '%                 ';
 
             foreach ($booksInfo as $book) {
                 Book::create([

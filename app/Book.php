@@ -38,7 +38,7 @@ class Book extends Model {
 
         return [
             'count' => $count,
-            'result' => $result
+            'books' => $result
         ];
     }
 

@@ -1,12 +1,8 @@
 <?php namespace App\Http\Controllers;
-use App\Exceptions\AuthException;
+
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
 
-use App\User;
-use Illuminate\Http\Request;
-
-class ViewController extends controller {
+class ViewController extends Controller {
 
 	protected $_assetsJson;
     protected $_assetsName = '';
@@ -20,7 +16,7 @@ class ViewController extends controller {
         $assetsJsonPath = __DIR__ . '/assets.json';
 
         if (!file_exists($assetsJsonPath)) {
-            throw new Exception('cant find assets.json');
+            throw new \Exception('cant find assets.json');
         } else {
             $this->_assetsJson = json_decode(file_get_contents($assetsJsonPath), TRUE);
         }
