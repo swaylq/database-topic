@@ -1,5 +1,5 @@
 //when element change the status(hide or show), they can choose whether fade in and whether fade out
-angular.module('axws')
+angular.module('database')
     .directive('fade', ['$animate', function ($animate) {
         return {
             multiElement: true,

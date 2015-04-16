@@ -1,22 +1,20 @@
+@import url(http://fonts.useso.com/css?family=Electrolize);
+@import url(http://fonts.useso.com/css?family=Cuprum);
+
 html {
     width: 100%;
 }
 body {
-    background-color: rgba(202, 234, 254, 0.66);
-    font-family:lato-regular, 'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
     width: 100%;
-}
-
-ul {
-    list-style: none;
+    font-family: Electrolize,sans-serif;
 }
 
 .wrap {
-    margin: 50px 0px 20px 0px;
     position: relative;
+    margin-top: 30px;
 }
 
-.wrap > .center {
+.center {
     position: relative;
     width: 1000px;
     padding: 15px;
@@ -24,6 +22,14 @@ ul {
     margin-left: auto;
     margin-right: auto;
     min-height: 590px;
+}
+
+.title {
+    font-family: Cuprum,'Hiragino Sans GB','Microsoft YaHei',sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 1px solid rgb(213,213,213);
+    padding-bottom: 15px;
 }
 
 .clear-float {

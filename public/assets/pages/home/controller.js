@@ -1,15 +1,12 @@
-angular.module('axws')
+angular.module('database')
     .controller('HomeController', ['$http', '$scope',
         function ($http, $scope){
-            $scope.goods = g_goods;
-            $scope.services = g_services;
-            $scope.slides = g_slides;
-            $scope.siteStat = g_site_stat;
-            $scope.articles = g_articles;
-            $scope.articleTab = 'notification';
-            $scope.rankingsTab = 'service';
-            $scope.redirectDetail = function (id) {
-                window.open('/goods/detail/' + id);
-            };
+            $scope.database = g_config.database;
 
+            $scope.changeDatabase = function () {
+                $http.get('/service/changeDatabase')
+                    .success(function (){
+                        window.location.reload();
+                    });
+            };
     }]);

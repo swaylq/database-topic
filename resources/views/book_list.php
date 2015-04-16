@@ -4,14 +4,16 @@
             <li><a href="/">HOME</a></li>
             <li><a href="/book/list">BOOKS</a></li>
             <li><a href="/order/list">ORDERS</a></li>
-            <li><a>LOG OUT</a></li>
+            <li><a>EXIT</a></li>
         </ul>
-        <div class="col-xs-10">
+        <div class="col-xs-10" ng-controller="ListController">
             <div class="title">
-                Detail
+                Books
             </div>
             <div class="content">
-
+                <div ng-repeat="book in books">
+                    
+                </div>
             </div>
         </div>
         <div class="clear:float"></div>

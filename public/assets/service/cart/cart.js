@@ -1,4 +1,4 @@
-angular.module('axws')
+angular.module('database')
     .service('Cart', function (){
         'use strict';
         var service = {};

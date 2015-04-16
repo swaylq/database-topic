@@ -1,4 +1,4 @@
-angular.module('axws')
+angular.module('database')
     .directive('ngEnter', function () {
         return function (scope, element, attrs) {
             element.bind("keydown keypress", function (event) {

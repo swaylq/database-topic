@@ -1,4 +1,4 @@
-angular.module('axws')
+angular.module('database')
     .directive('numberSelector', [ function () {
         return {
             restrict: 'EA',

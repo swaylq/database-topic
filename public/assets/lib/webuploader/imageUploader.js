@@ -1,4 +1,4 @@
-angular.module('axws')
+angular.module('database')
     .directive('imageUploader', function () {
         'use strict';
         return {

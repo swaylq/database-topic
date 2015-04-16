@@ -1,4 +1,4 @@
-angular.module('axws',
+angular.module('database',
     ['ngSanitize', 'ui.bootstrap'],
     // TODO:still useful?
     ['$httpProvider', function ($httpProvider) {

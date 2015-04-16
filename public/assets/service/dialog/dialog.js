@@ -1,4 +1,4 @@
-angular.module('axws')
+angular.module('database')
     .service('Dialog', ['$modal', function ($modal) {
         'use strict';
         var ModalInstanceCtrl = function ($scope, $modalInstance, option) {

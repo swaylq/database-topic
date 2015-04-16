@@ -1,4 +1,4 @@
-angular.module('axws')
+angular.module('database')
     .service('Order', ['$http', '$modal', 'Dialog', function ($http, $modal, Dialog) {
         var service = {};
 

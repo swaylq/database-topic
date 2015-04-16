@@ -1,4 +1,11 @@
 <?php namespace App\Http\Controllers;
+use App\Exceptions\AuthException;
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
+
+use App\User;
+use Illuminate\Http\Request;
+
 class ViewController extends controller {
 
 	protected $_assetsJson;
@@ -11,11 +18,18 @@ class ViewController extends controller {
     {
         // load the assets
         $assetsJsonPath = __DIR__ . '/assets.json';
+
         if (!file_exists($assetsJsonPath)) {
             throw new Exception('cant find assets.json');
         } else {
             $this->_assetsJson = json_decode(file_get_contents($assetsJsonPath), TRUE);
         }
+
+		if (!\Session::get('database')) {
+			\Session::set('database', 'mysql');
+		}
+
+		$this->addJson('g_config', array('database' => \Session::get('database')));
     }
 
     protected function requireAssets($assetName)
@@ -46,6 +60,12 @@ class ViewController extends controller {
 	{
 		$this->requireAssets('home');
 		return $this->loadView('home', array());
+	}
+
+	public function bookList()
+	{
+		$this->requireAssets('book_list');
+		return $this->loadView('book_list', array());
 	}
 
 	public function bookDetail()

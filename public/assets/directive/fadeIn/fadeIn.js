@@ -1,5 +1,5 @@
 //when the page loads, the element fades in the page instead of appearing immediately
-angular.module('axws')
+angular.module('database')
     .directive('fadeIn', ['$animate', function ($animate) {
         return {
             multiElement: true,

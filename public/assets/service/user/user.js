@@ -1,4 +1,4 @@
-angular.module('axws')
+angular.module('database')
     .service('User', ['$modal', '$http', function ($modal, $http){
         'use strict';
         var ModalInstanceCtrl = function ($scope, $http, $modalInstance, Dialog) {

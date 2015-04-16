@@ -1,4 +1,4 @@
-angular.module('axws')
+angular.module('database')
     .directive('oneGood', [ function () {
         return {
             restrict: 'E',

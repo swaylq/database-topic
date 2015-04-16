@@ -48,5 +48,5 @@ function dateTimeDirective() {
     };
 }
 
-angular.module('axws')
+angular.module('database')
     .directive('dateTimePicker', dateTimeDirective);

@@ -1,4 +1,4 @@
-angular.module('axws')
+angular.module('database')
     .directive('fileUploader', function () {
         'use strict';
         return {

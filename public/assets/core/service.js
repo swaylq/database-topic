@@ -1,11 +1,11 @@
-angular.module('axws')
+angular.module('database')
     .filter('to_trusted', ['$sce', function ($sce) {
         'use strict';
         return function (text) {
             return $sce.trustAsHtml(text);
         }
     }]);
-angular.module('axws')
+angular.module('database')
     .service('http', [
         '$http', 'Dialog',
         function ($http, Dialog) {
@@ -60,7 +60,7 @@ angular.module('axws')
 
 
 
-angular.module('axws')
+angular.module('database')
     .service('WebkitNotifyService', [
         function () {
             'use strict';

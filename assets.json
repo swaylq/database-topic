@@ -181,6 +181,12 @@
                 "public/assets/pages/book_detail/*"
             ]
         },
+        "book_list": {
+            "groups": ["base"],
+            "files": [
+                "public/assets/pages/book_list/*"
+            ]
+        },
         "order_list": {
             "groups": ["base"],
             "files": [
