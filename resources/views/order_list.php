@@ -6,7 +6,7 @@
             <li><a href="/order/list">ORDERS</a></li>
             <li><a ng-click="exit()">EXIT</a></li>
         </ul>
-        <div class="col-xs-10" ng-controller="List2Controller">
+        <div class="col-xs-10" ng-controller="OrderListController">
             <div class="title">
                 Orders
             </div>

@@ -1,5 +1,5 @@
 angular.module('database')
-    .controller('List2Controller', ['$http', '$scope', '$modal',
+    .controller('OrderListController', ['$http', '$scope', '$modal',
         function ($http, $scope, $modal) {
             var urlPrefix = (g_config.database == 'mysql'? 'http://localhost:8900' : 'http://localhost:3000');
 
@@ -25,5 +25,5 @@ angular.module('database')
                             book.number = 1;
                         });
                     });
-            };
+            }
         }]);
