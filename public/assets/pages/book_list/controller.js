@@ -3,11 +3,21 @@ angular.module('database')
         function ($http, $scope, $modal, Dialog) {
             var urlPrefix = g_url.base_url('');
             $scope.filter = {page: 1, number: 10};
+            var url = '';
+            if (g_config.database =='mongodb') {
+                url = g_url.base_url('/service/book/list/1');
+            } else {
+                url = g_url.base_url('/service/book/list');
+            }
 
-            getData(urlPrefix + '/service/book/list');
+            getData(url);
 
             $scope.changePage = function (){
-                var url = urlPrefix + '/service/book/list?page=' + $scope.filter.page;
+                if (g_config.database =='mongodb') {
+                    url = g_url.base_url('/service/book/list/' + $scope.filter.page);
+                } else {
+                    url = g_url.base_url('/service/book/list?page=' + $scope.filter.page);
+                }
                 getData(url);
             };
 
@@ -26,7 +36,7 @@ angular.module('database')
                     };
                     $scope.postOrder = function () {
                         $scope.errorMsg = '';
-                        $http.post(urlPrefix + '/service/order/create', $scope.order)
+                        $http.post(g_url.base_url('/service/order/create'), $scope.order)
                             .success(function (data) {
                                 $modalInstance.dismiss();
                                 Dialog.alert({msg: data.msg, status:'success'});

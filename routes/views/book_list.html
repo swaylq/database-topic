@@ -22,25 +22,25 @@
     <link href="http://localhost:8900/assets/directive/numberSelector/numberSelector.css" rel="stylesheet" media="screen">
 <!--    the g_url, here is the ugly stuff -->
 <script>
-    "use strict";
-    var g_url = {};
-    var g_config = {database: 'mongodb'}
-    g_url.site_url = function (url) {
-        var site_url = "http://localhost:3000";
-        // ltrim the '/'
-        if (url.indexOf('/') === 0) {
-            url = url.substr(1);
-        }
-        return site_url + '/' + url;
-    };
+"use strict";
+var g_url = {};
+var g_config = {database: 'mongodb'}
+g_url.site_url = function (url) {
+    var site_url = "http://localhost:3000/public";
+    // ltrim the '/'
+    if (url.indexOf('/') === 0) {
+        url = url.substr(1);
+    }
+    return site_url + '/' + url;
+};
 
-    g_url.base_url = function (url) {
-        var base_url = "http://localhost:3000";
-        if (url.indexOf('/') === 0) {
-            url = url.substr(1);
-        }
-        return base_url + url;
-    };
+g_url.base_url = function (url) {
+    var base_url = "http://localhost:3000/";
+    if (url.indexOf('/') === 0) {
+        url = url.substr(1);
+    }
+    return base_url + url;
+};
 </script>
 </head>
 <body ng-app="database">

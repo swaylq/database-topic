@@ -68,7 +68,7 @@ class Order extends  Model
         }
 
         return [
-            'count' => $count,
+            'count' => $count->count,
             'orders' => $orders
             ];
     }
@@ -99,7 +99,7 @@ class Order extends  Model
         );
 
         return [
-            'count' => $count,
+            'count' => $count->count,
             'orders' => $orders
             ];
     }

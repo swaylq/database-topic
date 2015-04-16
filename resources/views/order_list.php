@@ -13,14 +13,12 @@
             <div class="content">
                 <table class="table">
                     <thead>
-                    <th>订单号</th>
                     <th>订购人</th>
                     <th>订单地址</th>
                     <th>价格</th>
                     </thead>
                     <tbody>
-                    <tr ng-repeat="order in orders">
-                        <td>{{order.id}}</td>
+                    <tr ng-repeat="order in orders" ng-click="showBooks(order.books)">
                         <td>{{order.consignee_name}}</td>
                         <td>{{order.consignee_address}}</td>
                         <td>{{order.price}}</td>
@@ -38,3 +36,27 @@
         <div class="clear:float"></div>
     </div>
 </div>
+<script type='text/ng-template' id='books.html'>
+    <div class="modal-header">
+        订单详情
+        <button ng-click="cancel()" type="button" class="close"><span>&times;</span><span class="sr-only">Close</span></button>
+    </div>
+    <div class="modal-body">
+        <table class="table">
+            <thead>
+                <th>书名</th>
+                <th>作者</th>
+                <th>价格</th>
+                <th>数量</th>
+            </thead>
+            <tbody>
+                <tr ng-repeat="book in books">
+                    <td>{{book.name}}</td>
+                    <td>{{book.author}}</td>
+                    <td>{{book.price}}</td>
+                    <td>{{book.number}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</script>

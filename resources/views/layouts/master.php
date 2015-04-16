@@ -27,7 +27,7 @@
             if (url.indexOf('/') === 0) {
                 url = url.substr(1);
             }
-            return base_url + url;
+            return base_url + '/' + url;
         };
 
     </script>

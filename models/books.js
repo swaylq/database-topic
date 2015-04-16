@@ -12,6 +12,9 @@ module.exports = function (mongoose) {
         console.log(this);
     };
 
-    bookModel = mongoose.model('book', bookSchema);
-    return bookModel;
+    book = {
+        model: mongoose.model('book', bookSchema),
+        schema: bookSchema
+    }
+    return book;
 }
