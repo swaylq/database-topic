@@ -12,6 +12,7 @@ class CreateBooksTable extends Migration {
 	 */
 	public function up()
 	{
+        if (Schema::hasTable('books')) return ;
 		Schema::create('books', function(Blueprint $table){
             $table->increments('id');
             $table->string('name');
@@ -25,7 +26,7 @@ class CreateBooksTable extends Migration {
             $table->text('detail')->nullable();
             $table->timestamps();
 
-            $table->unique('isbn');
+//            $table->unique('isbn');
         });
 	}
 
@@ -36,7 +37,7 @@ class CreateBooksTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::dropIfExists('books');
+		//Schema::dropIfExists('books');
 	}
 
 }

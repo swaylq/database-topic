@@ -22,8 +22,8 @@ class CreateRodersTable extends Migration {
             $table->integer('count')->default(0);
             $table->timestamps();
 
-            $table->index('user_id');
-            $table->index('consignee_name');
+//            $table->index('user_id');
+//            $table->index('consignee_name');
         });
 	}
 

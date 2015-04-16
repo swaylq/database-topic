@@ -13,6 +13,11 @@ class UsersTableSeeder extends Seeder{
 
     public function run()
     {
+        $count = \DB::selectOne('SELECT COUNT(*) AS num FROM users')->num;
+        if ($count) {
+            return ;
+        }
+
         $lastNames = ['张', '赵', '钱', '孙', '李', '周', '吴', '郑', '王', '诸葛', '欧阳', '上官', '司马', '公孙'];
         //$firstNames = ['三', '四', '麻', '光', '缸', '亮', '飞', '奎', '青', '海', '闯', '响', '冲', '子'];
 
