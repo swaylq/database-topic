@@ -1,6 +1,7 @@
 <?php namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Book extends Model {
 
@@ -9,7 +10,12 @@ class Book extends Model {
     protected $fillable = ['name', 'isbn', 'price', 'author', 'detail', 'intro', 'cover', 'stock'];
 
 
-    public static function getAll($offset = 0, $number = 10)
+    /**
+     * @param int $offset
+     * @param int $number
+     * @return array
+     */
+    public static function all($offset = 0, $number = 10)
     {
         $result = \DB::select(
             'SELECT id, name, author, cover, stock, price, intro ' .
@@ -29,8 +35,20 @@ class Book extends Model {
         }
 
         return [
-            'result' => $result,
-            'count' => $count
+            'count' => $count,
+            'result' => $result
         ];
+    }
+
+
+    public static function findById($id)
+    {
+        $result = \DB::selectOne(
+            'SELECT id, name, author, cover, stock, price, intro ' .
+            'FROM books ' .
+            "WHERE id={$id}"
+        );
+//        var_dump($result);
+        return $result;
     }
 }

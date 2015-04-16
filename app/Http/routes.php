@@ -19,4 +19,9 @@ Route::group(['prefix' => 'service'], function() {
         Route::post('/login', ['uses' => 'UserController@login']);
         Route::get('/logout', ['uses' => 'UserController@logout']);
     });
+
+    Route::group(['prefix' => 'book'], function() {
+        Route::get('/all', ['uses' => 'BookController@getAll']);
+        Route::get('/detail/{id}', ['uses' => 'BookController@getDetail']);
+    });
 });

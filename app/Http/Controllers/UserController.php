@@ -17,7 +17,7 @@ class UserController extends Controller {
         try {
             $result = User::login($name, $pwd);
         } catch (AuthException $e) {
-            return \Response::json($e->getMessage(), $e->getCode());
+            return $this->genMsg($e->getMessage(), $e->getCode());
         }
 
         if (is_array($result)) {
@@ -29,12 +29,13 @@ class UserController extends Controller {
             'name' => $result->name,
             'login' => TRUE
         ]);
-        return \Response::json($result);
+
+        return $this->genResult($result);
     }
 
     public function logout()
     {
         \Session::clear();
-        return \Response::json('登出成功');
+        return $this->genMsg('登出成功');
     }
 }
