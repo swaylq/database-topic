@@ -13,7 +13,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends  Model
 {
-    protected $table = 'books';
+    protected $table = 'orders';
 
     protected $fillable = ['consignee_name', 'consignee_address', 'price', 'user_id', 'count'];
 

@@ -104,7 +104,7 @@ class OrderController extends Controller {
 
         $totalPrice = 0;
         foreach ($books as $book) {
-            $totalPrice += abs($book->price) * $book->number;
+            $totalPrice += abs($book['price']) * $book['number'];
             unset($book->number);
             OrderBook::newOrderBook($book);
         }

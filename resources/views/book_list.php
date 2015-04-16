@@ -11,6 +11,9 @@
                 Books
             </div>
             <div class="content">
+                <div class="btn btn-primary" ng-click="postOrder()">
+                    下订单
+                </div>
                 <table class="table">
                     <thead>
                         <th>选择</th>
@@ -37,3 +40,23 @@
         <div class="clear:float"></div>
     </div>
 </div>
+
+<script type='text/ng-template' id='order.html'>
+    <div class="modal-header">
+        填写收货人
+        <button ng-click="cancel()" type="button" class="close"><span>&times;</span><span class="sr-only">Close</span></button>
+    </div>
+    <div class="modal-body">
+        <form class="form-horizontal" ng-submit="postOrder()">
+            <form-group form-obj="order" form-name="姓名" form-placeholder="请输入您的姓名" form-key="consignee_name" form-validate="{min: 0, max: 200}">
+            </form-group>
+            <form-group form-obj="order" form-name="地址" form-placeholder="请输入您的地址" form-key="consignee_address" form-validate="{min: 0, max: 200}">
+            </form-group>
+            <div class="form-group" style="margin-bottom:0px;">
+                <div class="col-sm-offset-2 col-sm-2">
+                    <button class="btn blue-btn" type="submit">确定</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</script>

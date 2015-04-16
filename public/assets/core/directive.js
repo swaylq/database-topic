@@ -48,7 +48,6 @@ angular.module('database')
                     callback:           '&'
                 },
                 link: function (scope) {
-                    console.log(scope);
                     var s = scope.s = {
                         jumpLength:         parseInt(scope.jumpLength)      || 20,
                         neighbourLength:    parseInt(scope.neighbourLength) || 2,
@@ -113,7 +112,9 @@ angular.module('database')
                         }
                         step = step || 1;
                         var length = Math.max(0, Math.ceil((stop - start) / step))
-                        if (length)
+                        if (!length) {
+                            length = 0;
+                        }
                         var range = new Array(length);
                         for (var i = 0; i < length; i++, start += step) {
                             range[i] = start;

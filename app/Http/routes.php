@@ -30,7 +30,7 @@ Route::group(['prefix' => 'service'], function() {
         Route::get('/all', ['uses' => 'OrderController@getAll']);   //分页（page & number)
         Route::get('/detail/{id}', ['uses' => 'OrderController@getDetail']);
         Route::get('/user/{uid}', ['uses' => 'OrderController@getByUser']); //分页（page & number)
-        Route::post('/order', ['uses' => 'OrderController@postOrder']);
+        Route::post('/create', ['uses' => 'OrderController@postOrder']);
     });
     Route::get('/changeDatabase', function (){
         Session::get('database') == 'mysql' ? Session::set('database', 'mongodb') : Session::set('database', 'mysql');
