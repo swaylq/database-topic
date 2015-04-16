@@ -1,10 +1,18 @@
 var express = require('express');
+var crypto = require('crypto')
 var router = express.Router();
 var mongoose = require('../db.js');
 var bookModel = require('../models/books.js')(mongoose);
 var orderModel = require('../models/orders.js')(mongoose);
+var userModel = require('../models/user.js')(mongoose);
 
-router.get('/book/create/exmple', function (req, res, next) {
+router.post('/service/user/login', function (req, res, next) {
+    var name = req.params.name;
+    var pwd = crypto.createHmac('sha1', req.params.pwd);
+    userModel.find({name: name, password: pwd});
+});
+
+router.get('/service/book/create/exmple', function (req, res, next) {
     var book = new bookModel({
         name: 'Harry Potter',
         author: 'JK',
@@ -17,19 +25,19 @@ router.get('/book/create/exmple', function (req, res, next) {
     res.send({book: book});
 });
 
-router.get('/book/detail/:id', function (req, res, next) {
+router.get('/service/book/detail/:id', function (req, res, next) {
     bookModel.findById(req.params.id).exec(function (err, book){
         res.send(book);
     });
 });
 
-router.get('/book/list', function (req, res, next) {
+router.get('/service/book/list', function (req, res, next) {
     bookModel.find().exec(function (err, books){
         res.send(books);
     })
 });
 
-router.post('/order/create', function (req, res, next){
+router.post('/service/order/create', function (req, res, next){
     var currentDate = new Date();
     var totalPrice = 0;
     req.params.books.forEach(function (book){
