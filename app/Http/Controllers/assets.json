@@ -178,7 +178,8 @@
             "assets/directive/fade/fade.js",
             "assets/directive/fadeIn/fadeIn.js",
             "assets/directive/formGroup/formGroup.js",
-            "assets/directive/numberSelector/numberSelector.js"
+            "assets/directive/numberSelector/numberSelector.js",
+            "assets/pages/order_list/controller.js"
         ],
         "css": [
             "assets/lib/bootstrap/dist/css/bootstrap.css",

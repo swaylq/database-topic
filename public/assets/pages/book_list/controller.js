@@ -2,6 +2,9 @@ angular.module('database')
     .controller('ListController', ['$http', '$scope', '$modal',
         function ($http, $scope, $modal) {
             var urlPrefix = g_url.base_url('');
+    .controller('ListController', ['$http', '$scope', '$modal','Dialog',
+        function ($http, $scope, $modal, Dialog) {
+            var urlPrefix = g_url.base_url('');
             $scope.filter = {page: 1, number: 10};
 
             getData(urlPrefix + '/service/book/list');

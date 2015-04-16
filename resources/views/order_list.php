@@ -6,7 +6,7 @@
             <li><a href="/order/list">ORDERS</a></li>
             <li><a ng-click="exit()">EXIT</a></li>
         </ul>
-        <div class="col-xs-10" ng-controller="List2Controller">
+        <div class="col-xs-10" ng-controller="OrderListController">
             <div class="title">
                 Orders
             </div>
@@ -24,11 +24,15 @@
                         <td>{{order.consignee_name}}</td>
                         <td>{{order.consignee_address}}</td>
                         <td>{{order.price}}</td>
-                        <td>{{order.books.name}}</td>
                     </tr>
                     </tbody>
                 </table>
-                <tq-page total-items="count" items-per-page="filter.number" callback="changePage($page)"></tq-page>
+                <div>
+                    <div class="btn btn-default pull-left" ng-disabled="filter.page == 1" ng-click="filter.page = filter.page - 1;changePage();">上一页</div>
+                    <div class="help-block pull-left">&nbsp;&nbsp;&nbsp;&nbsp;当前第{{filter.page}}页, 共有{{count}}项数据, &nbsp;&nbsp;&nbsp;&nbsp;</div>
+                    <div class="btn btn-default pull-left" ng-disabled="filter.page == count" ng-click="filter.page = filter.page + 1;changePage();">下一页</div>
+                    <div class="clear:float"></div>
+                </div>
             </div>
         </div>
         <div class="clear:float"></div>
