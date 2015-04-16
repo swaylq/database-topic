@@ -1,5 +1,11 @@
-<div class="center" ng-controller="LoginController">
-    <br><br><br><br><br><br>
+<div class="center" ng-controller="LoginController" ng-cloak>
+    <br><br><br>
+    <h4 class="col-sm-offset-2 help-block">当前数据库:{{database}}</h4>
+    <div class="col-sm-offset-2 btn btn-primary" ng-click="changeDatabase()">
+        Change
+    </div>
+    <br>
+    <br>
     <form class="form-horizontal" ng-submit="login()">
         <form-group form-obj="user" form-name="用户名" form-placeholder="请输入您的姓名" form-key="name" form-validate="{min: 0, max: 200}">
         </form-group>

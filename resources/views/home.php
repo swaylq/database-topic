@@ -23,10 +23,9 @@
                     <li>陈石</li>
                 </ul>
                 <br>
-                <h5>The current database is {{database}}</h5>
-                <br>
+                <h4 class="help-block">当前数据库:{{database}}</h4>
                 <div class="btn btn-primary" ng-click="changeDatabase()">
-                    change the database
+                    Change
                 </div>
             </div>
         </div>
