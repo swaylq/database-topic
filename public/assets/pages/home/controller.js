@@ -4,9 +4,11 @@ angular.module('database')
             $scope.database = g_config.database;
 
             $scope.changeDatabase = function () {
-                $http.get('/service/changeDatabase')
-                    .success(function (){
-                        window.location.reload();
-                    });
+                if (g_config.database == 'mysql') {
+                    console.log(123);
+                    window.location.href = "http://localhost:3000";
+                } else {
+                    window.location.href = "http://localhost:8900";
+                }
             };
     }]);

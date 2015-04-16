@@ -1,3 +1,4 @@
+
 <div class="wrap" ng-cloak>
     <div class="center">
         <ul class="col-xs-2 nav nav-pills nav-stacked" id="global-nav" ng-controller="SiteNavController">

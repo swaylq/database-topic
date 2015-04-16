@@ -15,10 +15,10 @@ angular.module('database')
                 });
         };
         $scope.changeDatabase = function () {
-            $http.get('/service/changeDatabase')
-                .success(function (){
-                    window.location.reload();
-                });
+            if (g_config.database == 'mysql') {
+                window.location.href = "http://localhost:3000";
+            } else {
+                window.location.href = "http://localhost:8900";
+            }
         };
-
     }]);

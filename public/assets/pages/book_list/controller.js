@@ -1,7 +1,7 @@
 angular.module('database')
     .controller('ListController', ['$http', '$scope', '$modal',
         function ($http, $scope, $modal) {
-            var urlPrefix = (g_config.database == 'mysql'? g_url.base_url('') : 'http://localhost:3000');
+            var urlPrefix = g_url.base_url('');
             $scope.filter = {page: 1, number: 10};
 
             getData(urlPrefix + '/service/book/list');
@@ -26,7 +26,6 @@ angular.module('database')
                     };
                     $scope.postOrder = function () {
                         $scope.errorMsg = '';
-                        console.log($scope.order);
                         $http.post(urlPrefix + '/service/order/create', $scope.order)
                             .success(function (data) {
                                 $modalInstance.dismiss();
