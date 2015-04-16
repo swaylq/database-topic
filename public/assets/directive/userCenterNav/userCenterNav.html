@@ -1,0 +1,26 @@
+<div id="user-center-nav" ng-cloak>
+    <div class="navbar-collapse">
+        <ul class="nav">
+            <form class="legend-title">
+                <fieldset>
+                    <legend>个人中心</legend>
+                </fieldset>
+            </form>
+            <li>
+                <a ng-click="navRedirect('info')" ng-class="{active:nav=='info'}"><i class="fa fa-user fa-fw"></i>&nbsp;&nbsp;我的信息</a>
+            </li>
+<!--             <li>
+                <a ng-click="navRedirect('setting')" ng-class="{active:nav=='setting'}"><i class="fa fa-fw fa-cogs"></i>&nbsp;&nbsp;个人设置</a>
+            </li> -->
+            <li>
+                <a ng-click="navRedirect('password')" ng-class="{active:nav=='password'}"><i class="fa fa-fw fa-unlock-alt"></i>&nbsp;&nbsp;密码修改</a>
+            </li>
+            <li>
+                <a ng-click="navRedirect('order')" ng-class="{active:nav=='order'}"><i class="fa fa-fw fa-shopping-cart"></i>&nbsp;&nbsp;购买记录</a>
+            </li>
+            <li>
+                <a ng-click="navRedirect('donate')" ng-class="{active:nav=='donate'}"><i class="fa fa-fw fa-heart"></i>&nbsp;&nbsp;捐赠记录</a>
+            </li>
+        </ul>
+    </div>
+</div>

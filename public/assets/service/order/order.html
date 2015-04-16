@@ -1,0 +1,93 @@
+<div fade exp="step==1" is-fade-out="false" is-fade-in="true">
+    <div class="modal-header" id="order-header">
+        1.确认爱心篮
+        <div class="pull-right">
+             <span ng-bind="cart.total>=0?'总共需要：':'总共获得：'"></span>
+             <money number="cart.total"></money>
+        </div>
+    </div>
+
+    <div class="modal-body" id="order-body">
+        <div class="one-order-good row" ng-repeat="good in cart.goods">
+            <div class="col-sm-2">
+                <div class="photo">
+                    <img src="{{good.photo}}"/>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="name">{{good.name}}</div>
+                <div class="price">
+                     <span ng-bind="good.price>=0?'单件需爱心币：':'单件获爱心币：'"></span>
+                     <money number="good.price"></money>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="count">
+                    <number-selector ng-model="good.count" size="lg" max="good.countMax"></number-selector>
+                </div>
+                <div class="total-price">
+                     <span ng-bind="good.totalPrice>=0?'共需：':'共获：'"></span>
+                     <money number="good.totalPrice"></money>
+                </div>
+                <div class="del-goods pull-right" ng-click="delGoods(good.id, $index)">
+                    <i class="fa fa-trash-o"></i>
+                </div>
+                <div class="clear-float"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer" id="order-footer">
+        <button class="btn btn-primary" ng-click="nextStep()">确认</button>
+        <button class="btn btn-danger" ng-click="cancel()">取消</button>
+    </div>
+</div>
+
+<form fade exp="step==2" is-fade-out="false" is-fade-in="true" ng-submit="nextStep()">
+    <div class="modal-header" id="order-header">
+        2.填写订单信息
+    </div>
+
+    <div class="modal-body" id="order-body">
+        <div class="form-horizontal">
+            <form-group form-obj="user" form-name="收货人" form-placeholder="请输入收货人姓名" form-key="name"  form-validate="{min: 0, max: 200}">
+            </form-group>
+            <form-group form-obj="user" form-name="联系方式" form-placeholder="请输入联系方式" form-key="  phone"  form-validate="{min: 0, max: 200}">
+            </form-group>
+        </div>
+    </div>
+
+    <div class="modal-footer" id="order-footer">
+        <div class="btn btn-default pull-left" ng-click="prevStep()">返回</div>
+        <button class="btn btn-primary" type="submit">确认</button>
+        <button class="btn btn-danger" ng-click="cancel()">取消</button>
+    </div>
+</form>
+
+<div fade exp="step==3" is-fade-out="false" is-fade-in="true">
+    <div class="modal-header" id="order-header">
+        3.确认订单
+    </div>
+
+    <div class="modal-body order-confirm" id="order-body">
+        <div>联系人：{{user.name}}</div>
+        <div>联系方式：{{user.phone}}</div>
+        <div>
+            物品：<span ng-repeat="good in cart.goods">
+                {{good.name}}&nbsp;*&nbsp;
+                <span class="custom-orange">{{good.count}}</span>&nbsp;,&nbsp;</span>
+        </div>
+        <div>
+             <span ng-bind="cart.total>=0?'总共需要：':'总共获得：'"></span>
+             <money number="cart.total"></money>
+        </div>
+    </div>
+
+    <div class="modal-footer" id="order-footer">
+        <button class="btn btn-default pull-left" ng-click="prevStep()">返回</button>
+        <button class="btn btn-primary" ng-click="ok()">确认</button>
+        <button class="btn btn-danger" ng-click="cancel()">取消</button>
+    </div>
+</div>
+
+

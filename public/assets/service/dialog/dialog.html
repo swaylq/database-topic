@@ -1,0 +1,15 @@
+<div class="modal-header">
+    提示
+</div>
+
+<div class="modal-body" id="dialog-body" style="font-size: 18px">
+    <i class="fa fa-check-circle" style="color:green" ng-show="status=='success'"></i>
+    <i class="fa fa-exclamation-circle" style="color:red" ng-show="status=='error'"></i>
+    <i class="fa fa-info-circle" style="color:green" ng-show="status=='info'"></i>
+    <span ng-bind="msg"></span>
+</div>
+
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="ok()"  ng-show="type=='confirm'||status=='info'">确认</button>
+    <button class="btn btn-danger" ng-click="cancel()"  ng-show="type=='confirm'">取消</button>
+</div>

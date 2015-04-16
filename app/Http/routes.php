@@ -10,10 +10,7 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
-Route::get('/', 'WelcomeController@index');
-
-Route::get('home', 'HomeController@index');
+Route::get('/', 'HomeController@index');
 
 Route::group(['prefix' => 'user'], function() {
     Route::post('/login', ['uses' => 'UserController@login']);

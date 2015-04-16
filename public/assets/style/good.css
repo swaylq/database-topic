@@ -1,0 +1,111 @@
+.one-good {
+    width: 190px;
+    border: 1px solid rgb(213,213,213);
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 10px 16px 20px 16px;
+    float: left;
+    cursor: pointer;
+}
+
+.one-good:hover {
+
+}
+
+.one-good > .photo > img{
+    width: 100%;
+    height: 130px;
+}
+
+.one-good > .bottom {
+    padding: 8px;
+}
+
+.one-good > .bottom > .name {
+    height: 20px;
+    color: rgb(100,100,100);
+}
+
+.one-good > .bottom > .price {
+    color: rgb(100,100,100);
+    margin-top: 5px;
+    font-size: 13px;
+}
+
+.one-good > .bottom > .intro {
+    margin-top: 5px;
+    color: rgb(150,150,150);
+    font-size: 12px;
+    height: 18px;
+    overflow: hidden;
+}
+
+.one-order-good {
+    border-bottom: 1px dashed rgb(213,213,213);
+}
+
+.one-order-good:last-child {
+    border-bottom: 0px;
+}
+
+.one-order-good > div {
+    height: 84px;
+    padding: 15px;
+    border-right: 1px dashed rgb(213,213,213);
+}
+
+.one-order-good > div:first-child {
+    padding: 10px;
+}
+
+.one-order-good > div:nth-child(3) {
+    border-right: 0px;
+}
+
+.one-order-good > div > .photo > img {
+    width: 100%;
+    height: 64px;
+}
+
+.one-order-good > div >.name ,
+.one-order-good > div > .price
+{
+    text-align: center;
+    font-size: 15px
+}
+
+.one-order-good > div >.name {
+    cursor: pointer;
+}
+
+.one-order-good > div >.name:hover {
+    color: rgb(150,150,150);
+}
+
+.one-order-good > div > .price {
+    margin-top: 5px;
+}
+
+.one-order-good > div > .count,
+.one-order-good > div >.total-price
+{
+    float: left;
+}
+
+.one-order-good > div > .count {
+    margin: 8px 5px;
+}
+
+.one-order-good > div > .total-price {
+    margin: 13px 0px 13px 10px;
+}
+
+.one-order-good > div > .del-goods {
+    margin: 10px 10px 10px 0px;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.one-order-good > div > .del-goods:hover {
+    color: rgb(255,20,0);
+}

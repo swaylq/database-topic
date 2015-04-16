@@ -1,0 +1,154 @@
+.home-poster {
+    margin-top: -150px;
+    height: 280px;
+    overflow: hidden;
+    box-shadow: 0px 1px 1px 1px rgb(213,213,213);
+    position: relative;
+}
+
+.home-poster > img {
+    width: 100%;
+}
+
+.home-poster > div {
+    width: 1000px;
+    margin: 0px auto;
+    position: relative;
+}
+
+.home-poster .logo {
+    position: absolute;
+    top: -620px;
+    left: -5px;
+    z-index: 1000;
+}
+
+.home-poster .logo > img{
+    width: 110px;
+    height: 80px;
+    float: left;
+}
+
+.home-poster .logo > div{
+    float: left;
+    color: white;
+    font-size: 40px;
+    font-family: "微软雅黑","文泉驿微米黑",Arial,"黑体","宋体",Arail,verdana;
+    margin: 10px 10px;
+}
+
+.wrap > .center {
+    margin-top: 1px;
+}
+
+.home-slides {
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.home-slides img {
+    width: 100%;
+    height: 335px!important;
+    margin: auto!important;
+}
+
+.content {
+    margin: 20px 0px;
+}
+
+.content > .one-cate > .header {
+    height: 45px;
+    border-bottom: 1px solid rgb(213, 213, 213);
+}
+
+.content > .one-cate > .header > .title {
+    font-size: 24px;
+    color: rgb(105, 159, 0);
+    float: left;
+}
+
+.content > .one-cate > .header > .more {
+    font-size: 13px;
+    color: rgb(105, 159, 0);
+    float: left;
+    margin: 10px 0px 0px 10px;
+    cursor: pointer;
+}
+
+.content > .one-cate > .header > .more > em{
+    margin: 1px 0px 0px 1px;
+}
+
+
+.content > .one-cate > .list {
+    clear: both;
+    margin: 10px -16px;
+}
+
+.right {
+    padding-left: 0px;
+}
+
+.right > .total-information {
+    text-align: center;
+    padding: 0px;
+    color: rgb(100,100,100);
+    background-color: white;
+    border: 1px solid rgb(200, 200, 200);
+    border-radius: 5px;
+}
+
+.right > .total-information > div {
+    padding: 10px 0px;
+    margin: 0px 40px;
+    line-height: 41px;
+    font-size: 15px;
+    border-bottom: 1px solid rgb(144, 178, 58);
+}
+
+.right > .total-information > div:last-child {
+    border-bottom-width: 0px;
+}
+
+.right > .total-information > div > label:first-child {
+    font-weight: 500;
+}
+
+.right > .total-information > div > label:last-child {
+    font-weight: 800;
+    color: rgb(255, 92, 0);
+}
+
+.right > .article {
+    border: 1px solid rgb(200,200,200);
+    border-radius: 5px;
+    margin-top: 25px;
+}
+
+.right > .article > .tab > div {
+    color: rgb(105, 159, 0);
+    border-bottom: 2px solid rgb(200,200,200);
+    line-height: 35px;
+    font-size: 18px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.right > .article > .tab > div.active,
+.right > .article > .tab > div.hover
+{
+    border-bottom: 2px solid rgb(105, 159, 0);
+}
+
+.right > .article > .tab > div:first-child {
+    border-right: 2px solid rgb(200,200,200);
+}
+
+.right > .article .list {
+    padding-left: 10px;
+}
+
+.right > .article .list li a{
+    color: rgb(100, 100, 100);
+}

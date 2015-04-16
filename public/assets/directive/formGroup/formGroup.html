@@ -1,0 +1,7 @@
+<div class="form-group">
+    <label class="col-sm-2 control-label">{{name}}</label>
+    <div class="col-sm-7">
+        <input class="form-control" placeholder="{{placeholder}}" ng-model="$parent.$parent[obj][key]" ng-minlength = "validate.min" type="text" ng-if="type!='password'" ng-maxlength = "validate.max" required>
+        <input class="form-control" placeholder="{{placeholder}}" ng-model="$parent.$parent[obj][key]" ng-minlength = "validate.min" type="password" ng-if="type=='password'" ng-maxlength = "validate.max" required>
+    </div>
+</div>

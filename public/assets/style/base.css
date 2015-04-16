@@ -1,0 +1,40 @@
+html {
+    width: 100%;
+}
+body {
+    background-color: rgba(202, 234, 254, 0.66);
+    font-family:lato-regular, 'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    width: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+.wrap {
+    margin: 50px 0px 20px 0px;
+    position: relative;
+}
+
+.wrap > .center {
+    position: relative;
+    width: 1000px;
+    padding: 15px;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 590px;
+}
+
+.clear-float {
+    float: none!important;
+    clear: both!important;
+    height: 0px!important;
+    width: 0px!important;
+    margin: 0px!important;
+    padding: 0px!important;
+    position: relative;
+    border:none!important;
+}
+
+@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-start{clip:rect(0,auto,auto,0);-ms-zoom:1.0001;}.ng-animate-active{clip:rect(-1px,auto,auto,0);-ms-zoom:1;}

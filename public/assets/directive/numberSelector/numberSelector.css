@@ -1,0 +1,104 @@
+.number-selector.lg > .subtract,
+.number-selector.lg > .count,
+.number-selector.lg > .add
+{
+    float: left;
+    -moz-user-select: none;  
+    -webkit-user-select: none;  
+    -ms-user-select: none;  
+}
+
+.number-selector.lg > .subtract,
+.number-selector.lg > .add 
+{
+    border: 1px solid rgb(200,200,200);
+    height: 34px;
+    width: 34px;
+    cursor: pointer;
+    color: rgb(90,90,90);
+    background-color: rgb(237,237,237);
+}
+
+.number-selector.lg > .disabled
+{
+    color: rgb(180,180,180);
+    cursor: not-allowed;
+} 
+
+.number-selector.lg > .subtract {
+    font-size: 13px;
+    font-weight: bold;
+    border-right : 0px;
+    padding: 7px 10px;
+}
+
+.number-selector.lg > .add {
+    border-left: 0px;
+    padding: 6px 11px;
+}
+
+
+.number-selector.lg > .count > input{
+    width: 70px;
+    border-radius: 0px;
+    text-align: center;
+    box-shadow: none;
+    border-color: rgb(200,200,200);
+}
+
+.number-selector.lg > .count > input:focus{
+    box-shadow: none;
+    border-color: rgb(200,200,200);
+}
+
+
+
+
+.number-selector.sm > .subtract,
+.number-selector.sm > .count,
+.number-selector.sm > .add
+{
+    float: left;
+    -moz-user-select: none;  
+    -webkit-user-select: none;  
+    -ms-user-select: none;  
+}
+
+.number-selector.sm > .subtract,
+.number-selector.sm > .add 
+{
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    color: rgb(90,90,90);
+}
+
+.number-selector.sm > .disabled
+{
+    color: rgb(180,180,180);
+    cursor: not-allowed;
+} 
+
+.number-selector.sm > .subtract {
+    font-size: 12px;
+    font-weight: bold;
+    padding: 9px 9px;
+}
+
+.number-selector.sm > .add {
+    padding: 7px 8px;
+}
+
+
+.number-selector.sm > .count > input{
+    width: 20px;
+    text-align: center;
+    box-shadow: none;
+    padding: 0px;
+    border: none;
+}
+
+.number-selector.sm > .count > input:focus{
+    box-shadow: none;
+    border: none;
+}

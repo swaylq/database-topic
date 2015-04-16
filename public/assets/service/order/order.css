@@ -1,0 +1,12 @@
+#order-body {
+    padding: 0px 15px;
+}
+
+#order-body > .form-horizontal{
+    padding-top: 15px;
+}
+
+#order-body.order-confirm > div {
+    margin: 10px;
+    color: rgb(100,100,100);
+}

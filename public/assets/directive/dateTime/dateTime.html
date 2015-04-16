@@ -1,0 +1,18 @@
+<div class="tq-date-time">
+    <div class="col-lg-6" style="padding-right:0px" ng-hide="obj.onlyTime">
+        <div class="input-group">
+            <input type="text" class="form-control" datepicker-popup="yyyy-MM-dd" is-open="opened"
+                   min-date="minDate" datepicker-options="dateOptions" ng-click="open($event)"  ng-model="obj.date"
+                   close-text="确定" current-text="今天" clear-text="清空" required ng-change="format()"/>
+
+                  <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="open($event)"><i
+                            class="glyphicon glyphicon-calendar"></i></button>
+                  </span>
+        </div>
+    </div>
+    <div class="col-lg-6 help-block" ng-show="obj.onlyTime" style="padding: 0px 0px 0px 15px;margin-top:2.5px">
+        {{obj.describe}}
+    </div>
+    <timepicker ng-model="obj.time" show-meridian="false" ng-change="format()"></timepicker>
+</div>

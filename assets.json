@@ -1,0 +1,180 @@
+{
+    "libpath": "public/assets/dist/lib",
+    "grouppath": "public/assets/dist/group",
+    "pagepath": "public/assets/dist/page",
+    "webroot": "public",
+    "min": false,
+    "hash": false,
+    "dst": "app/assets.json",
+    "libs": {
+        "jquery": {
+            "name": "jquery",
+            "files": [
+                "public/assets/lib/jquery/dist/jquery.js"
+            ]
+        },
+        "bootstrap": {
+            "name": "bootstrap",
+            "files": [
+                "public/assets/lib/bootstrap/dist/css/bootstrap.css",
+                "public/assets/lib/bootstrap/dist/js/bootstrap.js"
+            ]
+        },
+        "angular": {
+            "name": "angular",
+            "files": [
+                "public/assets/lib/angular/angular.js",
+                "public/assets/lib/angular/angular-sanitize.js",
+                "public/assets/lib/angular/ui-bootstrap-tpls-0.11.2.js"
+            ],
+            "dependencies": [
+                "jquery",
+                "bootstrap"
+            ]
+        },
+        "angular-ex": {
+            "name": "angular-ex",
+            "files": [
+                "public/assets/lib/angular/angular-route.js"
+            ],
+            "dependencies": [
+                "angular"
+            ]
+        },
+        "angular-scroll": {
+            "name": "angular-scroll",
+            "bower": false,
+            "files": [
+                "public/assets/lib/angular-scroll/angular-scroll.js"
+            ]
+        },
+        "base": {
+            "name": "base",
+            "files": [
+                "public/assets/core/*.js",
+                "public/assets/style/*.css"
+            ]
+        },
+        "date-time": {
+            "name": "date-time",
+            "files": [
+                "public/assets/directive/dateTime/dateTime.css",
+                "public/assets/directive/dateTime/dateTime.js"
+            ]
+        },
+        "highlight": {
+            "name": "highlight",
+            "files": [
+                "public/assets/lib/highlight/highlight.pack.js",
+                "public/assets/lib/highlight/styles/github.css"
+            ]
+        },
+        "fontawesome": {
+            "name": "fontawesome",
+            "files": [
+                "public/assets/lib/fontawesome/css/font-awesome.css"
+            ]
+        },
+        "moment": {
+            "name": "moment",
+            "files": [
+                "public/assets/lib/date-time/moment.js"
+            ]
+        },
+        "webuploader": {
+            "name": "webuploader",
+            "files": [
+                "public/assets/lib/webuploader/webuploader.js",
+                "public/assets/lib/webuploader/webuploader.css",
+                "public/assets/lib/webuploader/imageUploader.js",
+                "public/assets/lib/webuploader/fileUploader.js"
+            ]
+        },
+        "fade": {
+            "name": "fade",
+            "files": [
+                "public/assets/directive/fade/*.js"
+            ]
+        },
+        "fade-in": {
+            "name": "fade-in",
+            "files": [
+                "public/assets/directive/fadeIn/*.js"
+            ]
+        },
+        "form-group": {
+            "name": "form-group",
+            "files": [
+                "public/assets/directive/formGroup/*.js"
+            ]
+        },
+        "number-selector": {
+            "name": "number-selector",
+            "files": [
+                "public/assets/directive/numberSelector/*.js",
+                "public/assets/directive/numberSelector/*.css"
+            ]
+        },
+        "cart": {
+            "name": "cart",
+            "files": [
+                "public/assets/service/cart/*.js"
+            ]
+        },
+        "dialog": {
+            "name": "dialog",
+            "files": [
+                "public/assets/service/dialog/*.js"
+            ]
+        },
+        "order": {
+            "name": "order",
+            "files": [
+                "public/assets/service/order/*.js",
+                "public/assets/service/order/*.css"
+            ]
+        },
+        "user": {
+            "name": "user",
+            "files": [
+                "public/assets/service/user/*.js",
+                "public/assets/service/user/*.css"
+            ]
+        },
+        "user-center-nav": {
+            "name" : "user-center-nav",
+            "files": [
+                "public/assets/directive/userCenterNav/*.js",
+                "public/assets/directive/userCenterNav/*.css"
+            ]
+        }
+    },
+    "groups": {
+        "base": {
+            "name": "base",
+            "libs": [
+                "angular",
+                "fontawesome",
+                "moment",
+                "base",
+                "cart",
+                "dialog",
+                "order",
+                "user",
+                "fade",
+                "fade-in",
+                "form-group",
+                "number-selector"
+            ]
+        }
+    },
+    "pages": {
+        "home": {
+            "groups": ["base"],
+            "files": [
+                "public/assets/pages/home/*.js",
+                "public/assets/pages/home/*.css"
+            ]
+        }
+    }
+}

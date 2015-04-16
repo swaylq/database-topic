@@ -1,0 +1,17 @@
+#custom-page ul {
+    border: none;
+    border-bottom: 1px solid #eee;
+    border-radius: 0px;
+    margin: 0px 0px;
+}
+
+#custom-page ul li a{
+    border: none;
+    background-color: white;
+    color: rgb(117,117,117);
+}
+
+#custom-page ul li.active a{
+    color: rgb(52, 179, 83);
+    border-bottom: 1px solid rgb(52, 179, 83);
+}

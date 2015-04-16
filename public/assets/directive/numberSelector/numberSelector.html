@@ -1,0 +1,12 @@
+<div class="number-selector" ng-class="{'lg':size=='lg','sm':size=='sm'}">
+    <div class="subtract" ng-click="subtract()" ng-class="{'disabled':ngModel<=1}">
+        一
+    </div>
+    <div class="count">
+        <input type="text" class="form-control" ng-model="ngModel">
+    </div>
+    <div class="add" ng-click="add()" ng-class="{'disabled':ngModel>=max}">
+        <i class="fa fa-plus"></i>
+    </div>
+    <div class="clear-float"></div>
+</div>

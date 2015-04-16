@@ -1,7 +1,8 @@
 {
   "private": true,
   "devDependencies": {
-    "gulp": "^3.8.8",
-    "laravel-elixir": "*"
+      "assets-bower-ci": "latest",
+      "gulp": "^3.8.8",
+      "laravel-elixir": "*"
   }
 }

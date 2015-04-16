@@ -1,0 +1,23 @@
+<div class="tq-date-time">
+    <!--<label><span class="tq-red" ng-show="dateObj.required">*</span>{{dateObj.desc}}</label>-->
+    <div class="col-lg-6">
+        <div class="input-group">
+            <input type="text" class="form-control" datepicker-popup="yyyy-MM-dd" is-open="opened"
+                   min-date="minDate" datepicker-options="dateOptions" ng-click="open($event)"  ng-model="time[name].date"
+                   close-text="确定" current-text="今天" clear-text="清空" required ng-change="format()"/>
+
+                  <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="open($event)"><i
+                            class="glyphicon glyphicon-calendar"></i></button>
+                  </span>
+        </div>
+    </div>
+
+    <timepicker ng-model="time[name].time" show-meridian="false" ng-change="format()"></timepicker>
+    <!--用于显示错误信息-->
+    <span>
+        <i class="fa fa-times-circle tq-red" ng-show="dateObj.status=='error'"></i>
+        <i class="fa fa-check-circle tq-green" ng-show="dateObj.status=='ok'"></i>
+        {{dateObj.msg}}
+    </span>
+</div>
