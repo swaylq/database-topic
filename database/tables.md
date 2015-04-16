@@ -28,7 +28,7 @@
 |  id  |  int   |  primary key  |
 | assignee_name | varchar |  |
 | assignee_address | varchar |  |
-| created_at | time stamp | created time | 
+| created_at | time stamp | created time |
 
 
 ### order_books
