@@ -102,15 +102,22 @@ class OrderController extends Controller {
             $orderBookInfo[$key] = \Request::input($key, $value);
         }
 
+        $order = Order::newOrder($orderBookInfo);
+
         $totalPrice = 0;
+
         foreach ($books as $book) {
             $totalPrice += abs($book['price']) * $book['number'];
-            unset($book->number);
-            OrderBook::newOrderBook($book);
+            OrderBook::newOrderBook([
+                'order_id' => $order->id,
+                'book_id' => $book['id'],
+                'number' => $book['number'],
+                'price' => $book['price']
+            ]);
         }
 
-        $orderBookInfo['price'] = $totalPrice;
-        Order::newOrder($orderBookInfo);
+        $order->price = $totalPrice;
+        $order->save();
 
         return $this->genMsg('下单成功');
     }
