@@ -1,7 +1,7 @@
 angular.module('database')
     .controller('ListController', ['$http', '$scope', '$modal',
         function ($http, $scope, $modal) {
-            var urlPrefix = (g_config.database == 'mysql'? 'http://localhost:8900' : 'http://localhost:3000');
+            var urlPrefix = (g_config.database == 'mysql'? g_url.base_url('') : 'http://localhost:3000');
 
             getData(urlPrefix + '/service/book/list');
             $scope.$watch('filter', function (newV, oldV) {
