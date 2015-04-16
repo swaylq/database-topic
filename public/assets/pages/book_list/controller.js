@@ -4,10 +4,12 @@ angular.module('database')
             var urlPrefix = (g_config.database == 'mysql'? 'http://localhost:8900' : 'http://localhost:3000');
 
             getData(urlPrefix + '/service/book/list');
-            $scope.changePage = function (page) {
-                var url = urlPrefix + '/service/book/list?page=' + page;
-                getData();
-            };
+            $scope.$watch('filter', function (newV, oldV) {
+                if (newV != oldV) {
+                    var url = urlPrefix + '/service/book/list?page=' + $scope.filter.page;
+                    getData();
+                }
+            }, true);
 
             $scope.postOrder = function () {
                 var books = [];

@@ -34,7 +34,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <tq-page total-items="count" items-per-page="filter.number" callback="changePage($page)"></tq-page>
+                <pagination total-items="count" max-size="5" boundary-links="true" rotate="false" previous-text="上一页" next-text="下一页" ng-model="filter.page" items-per-page="filter.number"></pagination>
             </div>
         </div>
         <div class="clear:float"></div>
