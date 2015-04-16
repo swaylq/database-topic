@@ -10,10 +10,10 @@
             <div class="title">
                 Books
             </div>
+            <div class="btn btn-primary" style="position:absolute;right:15px;top:0px" ng-click="postOrder()">
+                下订单
+            </div>
             <div class="content">
-                <div class="btn btn-primary" ng-click="postOrder()">
-                    下订单
-                </div>
                 <table class="table">
                     <thead>
                         <th>选择</th>
