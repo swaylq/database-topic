@@ -134,6 +134,12 @@
                 "public/assets/service/order/*.css"
             ]
         },
+        "oneGood": {
+            "name" :"oneGood",
+            "files": [
+                "public/assets/directive/oneGood/*.js"
+            ]
+        },
         "user": {
             "name": "user",
             "files": [
@@ -160,6 +166,7 @@
                 "cart",
                 "dialog",
                 "order",
+                "oneGood",
                 "user",
                 "fade",
                 "fade-in",
@@ -174,6 +181,81 @@
             "files": [
                 "public/assets/pages/home/*.js",
                 "public/assets/pages/home/*.css"
+            ]
+        },
+        "article_detail": {
+            "groups": ["base"],
+            "files": [
+                "public/assets/pages/article_detail/*.js",
+                "public/assets/pages/article_detail/*.css"
+            ]
+        },
+        "goods_list": {
+            "groups": ["base"],
+            "files": [
+                "public/assets/pages/goods_list/*.js",
+                "public/assets/pages/goods_list/*.css"
+            ]
+        },
+        "goods_detail": {
+            "groups": ["base"],
+            "files": [
+                "public/assets/pages/goods_detail/*.js",
+                "public/assets/pages/goods_detail/*.css"
+            ]
+        },
+        "services_list": {
+            "groups": ["base"],
+            "files": [
+                "public/assets/pages/services_list/*.js",
+                "public/assets/pages/services_list/*.css"
+            ]
+        },
+        "user_center_setting": {
+            "groups": ["base"],
+            "libs": ["user-center-nav", "webuploader"],
+            "files": [
+                "public/assets/pages/user_center/controller/setting.js",
+                "public/assets/pages/user_center/css/setting.css"
+            ]
+        },
+        "user_center_order": {
+            "groups": ["base"],
+            "libs": ["user-center-nav"],
+            "files": [
+                "public/assets/pages/user_center/controller/order.js",
+                "public/assets/pages/user_center/css/order.css"
+            ]
+        },
+        "user_center_info": {
+            "groups": ["base"],
+            "libs": ["user-center-nav"],
+            "files": [
+                "public/assets/pages/user_center/controller/info.js",
+                "public/assets/pages/user_center/css/info.css"
+            ]
+        },
+        "user_center_password": {
+            "groups": ["base"],
+            "libs": ["user-center-nav"],
+            "files": [
+                "public/assets/pages/user_center/controller/password.js",
+                "public/assets/pages/user_center/css/password.css"
+            ]
+        },
+        "user_center_donate": {
+            "groups": ["base"],
+            "libs": ["user-center-nav"],
+            "files": [
+                "public/assets/pages/user_center/controller/donate.js",
+                "public/assets/pages/user_center/css/donate.css"
+            ]
+        },
+        "search": {
+            "groups": ["base"],
+            "files": [
+                "public/assets/pages/search/*.js",
+                "public/assets/pages/search/*.css"
             ]
         }
     }

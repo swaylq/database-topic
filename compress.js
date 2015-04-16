@@ -1,4 +1,4 @@
 var Mgr = require('assets-bower-ci');
-Mgr.init('assets.json');
-Mgr.run();
-Mgr.toJson();
+var mgr = new Mgr('assets.json');
+mgr.parseAllPage();
+// copy the generated assets.json
