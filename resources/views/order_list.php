@@ -19,17 +19,20 @@
                     <th>价格</th>
                     </thead>
                     <tbody>
-                    <accordion-group ng-repeat="order in orders">
+                    <tr ng-repeat="order in orders">
                         <td>{{order.id}}</td>
                         <td>{{order.consignee_name}}</td>
                         <td>{{order.consignee_address}}</td>
                         <td>{{order.price}}</td>
-
-
-                    </accordion-group>
+                    </tr>
                     </tbody>
                 </table>
-                <tq-page total-items="count" items-per-page="filter.number" callback="changePage($page)"></tq-page>
+                <div>
+                    <div class="btn btn-default pull-left" ng-disabled="filter.page == 1" ng-click="filter.page = filter.page - 1;changePage();">上一页</div>
+                    <div class="help-block pull-left">&nbsp;&nbsp;&nbsp;&nbsp;当前第{{filter.page}}页, 共有{{count}}项数据, &nbsp;&nbsp;&nbsp;&nbsp;</div>
+                    <div class="btn btn-default pull-left" ng-disabled="filter.page == count" ng-click="filter.page = filter.page + 1;changePage();">下一页</div>
+                    <div class="clear:float"></div>
+                </div>
             </div>
         </div>
         <div class="clear:float"></div>

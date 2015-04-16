@@ -12,10 +12,9 @@ angular.module('database')
             function getData(url) {
                 $http.get(url)
                     .success(function (data){
-                        $scope.id = data.result.id;
-                        $scope.consignee_name = data.result.consignee_name;
-                        $scope.consignee_address = data.result.consignee_address;
-                        $scope.price = data.result.price;
+                        console.log(data);
+                        $scope.orders = data.result.orders;
+                        $scope.count = data.result.count;
                         $scope.filter = data.filter;
                         $scope.filter.page = Number($scope.filter.page);
 
