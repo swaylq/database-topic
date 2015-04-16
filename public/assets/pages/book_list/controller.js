@@ -1,7 +1,4 @@
 angular.module('database')
-    .controller('ListController', ['$http', '$scope', '$modal',
-        function ($http, $scope, $modal) {
-            var urlPrefix = g_url.base_url('');
     .controller('ListController', ['$http', '$scope', '$modal','Dialog',
         function ($http, $scope, $modal, Dialog) {
             var urlPrefix = g_url.base_url('');
