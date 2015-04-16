@@ -135,8 +135,7 @@ class Order extends  Model
                     "SELECT book_id, number, books.name, " .
                     "books.author, books.cover, books.intro, books.price " .
                     "FROM order_books " .
-                    "LEFT JOIN books " .
-                    "WHERE books.id=book_id " .
+                    "LEFT JOIN books ON books.id=book_id " .
                     "WHERE order_id={$order->id}"
                 );
 
