@@ -11,6 +11,8 @@
 |
 */
 Route::get('/', 'ViewController@home');
+Route::get('/home', 'ViewController@home');
+Route::get('/login', 'ViewController@login');
 Route::get('/book/list', 'ViewController@bookList');
 Route::get('/book/detail/{id}', 'ViewController@bookDetail');
 Route::get('/order/list', 'ViewController@orderList');

@@ -175,6 +175,12 @@
                 "public/assets/pages/home/*"
             ]
         },
+        "login": {
+            "groups": ["base"],
+            "files": [
+                "public/assets/pages/login/*"
+            ]
+        },
         "book_detail": {
             "groups": ["base"],
             "files": [

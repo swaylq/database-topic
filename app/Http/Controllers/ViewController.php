@@ -54,26 +54,46 @@ class ViewController extends Controller {
 
 	public function home()
 	{
+		if (!\Session::get('user')) {
+			header('Location:/login');
+		}
 		$this->requireAssets('home');
 		return $this->loadView('home', array());
 	}
 
+	public function login()
+	{
+		$this->requireAssets('login');
+		return $this->loadView('login', array());
+	}
+
 	public function bookList()
 	{
+		if (!\Session::get('user')) {
+			header('Location:/login');
+		}
 		$this->requireAssets('book_list');
 		return $this->loadView('book_list', array());
 	}
 
 	public function bookDetail()
 	{
+		if (!\Session::get('user')) {
+			header('Location:/login');
+		}
 		$this->requireAssets('book_detail');
 		return $this->loadView('book_detail', array());
 	}
 
 	public function orderList()
 	{
+		if (!\Session::get('user')) {
+			header('Location:/login');
+		}
 		$this->requireAssets('order_list');
 		return $this->loadView('order_list', array());
 	}
+
+
 
 }

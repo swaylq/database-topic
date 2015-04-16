@@ -40,6 +40,46 @@
             "assets/pages/home/home.css"
         ]
     },
+    "login": {
+        "js": [
+            "assets/lib/jquery/dist/jquery.js",
+            "assets/lib/bootstrap/dist/js/bootstrap.js",
+            "assets/lib/angular/angular.js",
+            "assets/lib/angular/angular-sanitize.js",
+            "assets/lib/angular/ui-bootstrap-tpls-0.11.2.js",
+            "assets/lib/date-time/moment.js",
+            "assets/core/app.js",
+            "assets/core/controller.js",
+            "assets/core/directive.js",
+            "assets/core/service.js",
+            "assets/service/cart/cart.js",
+            "assets/service/dialog/dialog.js",
+            "assets/service/order/order.js",
+            "assets/service/user/user.js",
+            "assets/directive/fade/fade.js",
+            "assets/directive/fadeIn/fadeIn.js",
+            "assets/directive/formGroup/formGroup.js",
+            "assets/directive/numberSelector/numberSelector.js",
+            "assets/pages/login/controller.js"
+        ],
+        "css": [
+            "assets/lib/bootstrap/dist/css/bootstrap.css",
+            "assets/lib/fontawesome/css/font-awesome.css",
+            "assets/style/base.css",
+            "assets/style/button.css",
+            "assets/style/color.css",
+            "assets/style/form.css",
+            "assets/style/good.css",
+            "assets/style/modal.css",
+            "assets/style/nav.css",
+            "assets/style/page.css",
+            "assets/style/title.css",
+            "assets/service/order/order.css",
+            "assets/service/user/login.css",
+            "assets/service/user/register.css",
+            "assets/directive/numberSelector/numberSelector.css"
+        ]
+    },
     "book_detail": {
         "js": [
             "assets/lib/jquery/dist/jquery.js",
