@@ -1,0 +1,11 @@
+<ul class="pagination" ng-show="s.numPages">
+    <li ng-hide="r.current === 1">
+        <a ng-click="move(r.current - 1)"><span aria-hidden="true" ng-bind="s.previousText"></span></a>
+    </li>
+    <li ng-repeat="p in r.pages" ng-class="{active: p === r.current}">
+        <a ng-click="move(p.num || p)"><span ng-bind="p.text || p"></span></a>
+    </li>
+    <li ng-hide="r.current === s.numPages">
+        <a ng-click="move(r.current + 1)"><span aria-hidden="true" ng-bind="s.nextText"></span></a>
+    </li>
+</ul>
