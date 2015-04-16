@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRoderBooksTable extends Migration {
+class CreateOrderBooksTable extends Migration {
 
 	/**
 	 * Run the migrations.
