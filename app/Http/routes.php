@@ -14,7 +14,9 @@ Route::get('/', 'ViewController@home');
 Route::get('/book/detail/{id}', 'ViewController@bookDetail');
 Route::get('/order/list', 'ViewController@orderList');
 
-Route::group(['prefix' => 'user'], function() {
-    Route::post('/login', ['uses' => 'UserController@login']);
-    Route::get('/logout', ['uses' => 'UserController@logout']);
+Route::group(['prefix' => 'service'], function() {
+    Route::group(['prefix' => 'user'], function () {
+        Route::post('/login', ['uses' => 'UserController@login']);
+        Route::get('/logout', ['uses' => 'UserController@logout']);
+    });
 });
