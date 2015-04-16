@@ -1,5 +1,5 @@
 angular.module('axws',
-    ['ngRoute', 'ngSanitize', 'ui.bootstrap'],
+    ['ngSanitize', 'ui.bootstrap'],
     // TODO:still useful?
     ['$httpProvider', function ($httpProvider) {
         'use strict';

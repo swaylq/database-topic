@@ -1,12 +1,5 @@
 <?php namespace App\Http\Controllers;
-
-use Illuminate\Foundation\Bus\DispatchesCommands;
-use Illuminate\Routing\Controller as BaseController;
-use Illuminate\Foundation\Validation\ValidatesRequests;
-
-abstract class Controller extends BaseController {
-
-	use DispatchesCommands, ValidatesRequests;
+class ViewController extends controller {
 
 	protected $_assetsJson;
     protected $_assetsName = '';
@@ -23,10 +16,6 @@ abstract class Controller extends BaseController {
         } else {
             $this->_assetsJson = json_decode(file_get_contents($assetsJsonPath), TRUE);
         }
-
-        SiteStat::inc(SiteStat::VISITS);
-		var_dump(123);
-		exit;
     }
 
     protected function requireAssets($assetName)
@@ -52,4 +41,23 @@ abstract class Controller extends BaseController {
             $this->assetsData['header_data']['json']['value'][] = $value;
         }
     }
+
+	public function home()
+	{
+		$this->requireAssets('home');
+		return $this->loadView('home', array());
+	}
+
+	public function bookDetail()
+	{
+		$this->requireAssets('book_detail');
+		return $this->loadView('book_detail', array());
+	}
+
+	public function orderList()
+	{
+		$this->requireAssets('order_list');
+		return $this->loadView('order_list', array());
+	}
+
 }

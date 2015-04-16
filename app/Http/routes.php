@@ -10,14 +10,11 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-Route::get('/', 'HomeController@index');
+Route::get('/', 'ViewController@home');
+Route::get('/book/detail/{id}', 'ViewController@bookDetail');
+Route::get('/order/list', 'ViewController@orderList');
 
 Route::group(['prefix' => 'user'], function() {
     Route::post('/login', ['uses' => 'UserController@login']);
     Route::get('/logout', ['uses' => 'UserController@logout']);
 });
-
-Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
-]);
