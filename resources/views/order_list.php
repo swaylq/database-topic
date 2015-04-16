@@ -19,13 +19,14 @@
                     <th>价格</th>
                     </thead>
                     <tbody>
-                    <tr ng-repeat="order in orders">
+                    <accordion-group ng-repeat="order in orders">
                         <td>{{order.id}}</td>
                         <td>{{order.consignee_name}}</td>
                         <td>{{order.consignee_address}}</td>
                         <td>{{order.price}}</td>
-                        <td>{{order.books.name}}</td>
-                    </tr>
+
+
+                    </accordion-group>
                     </tbody>
                 </table>
                 <tq-page total-items="count" items-per-page="filter.number" callback="changePage($page)"></tq-page>

@@ -1,6 +1,6 @@
 angular.module('database')
-    .controller('ListController', ['$http', '$scope', '$modal',
-        function ($http, $scope, $modal) {
+    .controller('ListController', ['$http', '$scope', '$modal','Dialog',
+        function ($http, $scope, $modal, Dialog) {
             var urlPrefix = (g_config.database == 'mysql'? g_url.base_url('') : 'http://localhost:3000');
             $scope.filter = {page: 1, number: 10};
 
