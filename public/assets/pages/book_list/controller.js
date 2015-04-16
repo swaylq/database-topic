@@ -2,14 +2,14 @@ angular.module('database')
     .controller('ListController', ['$http', '$scope', '$modal',
         function ($http, $scope, $modal) {
             var urlPrefix = (g_config.database == 'mysql'? g_url.base_url('') : 'http://localhost:3000');
+            $scope.filter = {page: 1, number: 10};
 
             getData(urlPrefix + '/service/book/list');
-            $scope.$watch('filter', function (newV, oldV) {
-                if (newV != oldV) {
-                    var url = urlPrefix + '/service/book/list?page=' + $scope.filter.page;
-                    getData();
-                }
-            }, true);
+
+            $scope.changePage = function (){
+                var url = urlPrefix + '/service/book/list?page=' + $scope.filter.page;
+                getData(url);
+            };
 
             $scope.postOrder = function () {
                 var books = [];
@@ -52,6 +52,7 @@ angular.module('database')
                         $scope.books = data.result.books;
                         $scope.count = data.result.count;
                         $scope.filter = data.filter;
+                        $scope.filter.page = Number($scope.filter.page);
                         $scope.books.forEach(function (book){
                             book.number = 1;
                         });
