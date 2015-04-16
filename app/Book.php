@@ -24,14 +24,16 @@ class Book extends Model {
             "LIMIT {$offset},{$number}"
         );
 
-        $count = \DB::select(
+        $count = \DB::selectOne(
             'SELECT COUNT(*) AS count ' .
             'FROM books ' .
             'LIMIT 0,1'
         );
 
-        if (is_array($count) AND !empty($count)) {
-            $count = $count[0]->count;
+        if (!empty($count)) {
+            $count = $count->count;
+        } else {
+            $count = 0;
         }
 
         return [

@@ -21,7 +21,14 @@ Route::group(['prefix' => 'service'], function() {
     });
 
     Route::group(['prefix' => 'book'], function() {
-        Route::get('/all', ['uses' => 'BookController@getAll']);
+        Route::get('/all', ['uses' => 'BookController@getAll']);    //分页（page & number)
         Route::get('/detail/{id}', ['uses' => 'BookController@getDetail']);
+    });
+
+    Route::group(['prefix' => 'order'], function() {
+        Route::get('/all', ['uses' => 'OrderController@getAll']);   //分页（page & number)
+        Route::get('/detail/{id}', ['uses' => 'OrderController@getDetail']);
+        Route::get('/user/{uid}', ['uses' => 'OrderController@getByUser']); //分页（page & number)
+        Route::post('/order', ['uses' => 'OrderController@postOrder']);
     });
 });
