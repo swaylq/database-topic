@@ -36,7 +36,7 @@
 | column name | type | description |
 |-------------|------|-------------|
 |  id  |  int   |  primary key  |
-| order_id | int | - |
-| book_id | int | - |
+| order_id | int | foreign key |
+| book_id | int | foreign key |
 | number | int | count of books |
 | price | decimal(8,2) | price |
