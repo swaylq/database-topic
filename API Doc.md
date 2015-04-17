@@ -25,7 +25,7 @@
 ### Example
 | desc | method | URL | param | return |
 |------|--------|-----|-------|--------|
-| create | GET | /create/example | - | Response |
+| create an order and a user | GET | /create/example | - | Response |
 
 ### User
 | desc | method | URL | param | return |
